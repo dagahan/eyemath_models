@@ -21,6 +21,16 @@ from .jwt import (
     RefreshAccessResponse,
 )
 
+from .tokens.access_token import (
+    RequestAccess,
+    ResponseAccess
+)
+
+from .tokens.refresh_token import (
+    RequestRefresh,
+    ResponseRefresh
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -91,7 +101,12 @@ __all__ = [
     "RegisterResponse",
     "LoginResponse",
     "RefreshAccessResponse",
-    
+
+    "RequestAccess",
+    "ResponseAccess",
+    "RequestRefresh",
+    "ResponseRefresh"
+
     "UserDTO",
     "UserCreateDTO",
     "UserUpdateDTO",
