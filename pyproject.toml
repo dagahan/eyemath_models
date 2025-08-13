@@ -15,7 +15,7 @@ classifiers = [
 ]
 
 [tool.setuptools]
-packages = ["stubs"]
+packages = ["schemas", "models"]
 
 [project.urls]
 "Homepage" = "https://github.com/dagahan/bs_models"
