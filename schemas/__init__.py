@@ -15,10 +15,6 @@ from .author import (
 
 from .jwt import (
     TokenPayload,
-    LoginRequest,
-    RegisterResponse,
-    LoginResponse,
-    RefreshAccessResponse,
 )
 
 from .tokens.access_token import (
@@ -29,6 +25,16 @@ from .tokens.access_token import (
 from .tokens.refresh_token import (
     RequestRefresh,
     ResponseRefresh
+)
+
+from .endpoints.login import (
+    LoginRequest,
+    LoginResponse,
+)
+
+from .endpoints.register import (
+    RegisterResponse,
+    RegisterRequest,
 )
 
 from .user import (
