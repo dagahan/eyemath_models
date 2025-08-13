@@ -12,7 +12,7 @@ class User(Base):
     middle_name: Mapped[str] = mapped_column(String(32), nullable=False)
     email: Mapped[str] = mapped_column(String(64), nullable=True)
     phone: Mapped[str] = mapped_column(String(16), nullable=False)
-    role: Mapped[str] = mapped_column(Enum(UserRole, name="user_role_enum"), default=UserRole.user, nullable=False)
+    role: Mapped[UserRole] = mapped_column(Enum(UserRole, name="user_role_enum"), default=UserRole.user, nullable=False)
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     
