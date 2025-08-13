@@ -1,4 +1,4 @@
-from src.services.db.models.base_model import *
+from .base_model import *
 
 
 class Warehouse(Base):
