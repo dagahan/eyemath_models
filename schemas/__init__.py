@@ -19,12 +19,12 @@ from .jwt import (
 
 from .tokens.access_token import (
     RequestAccess,
-    ResponseAccess
+    ResponseAccess,
 )
 
 from .tokens.refresh_token import (
     RequestRefresh,
-    ResponseRefresh
+    ResponseRefresh,
 )
 
 from .endpoints.login import (
@@ -33,8 +33,8 @@ from .endpoints.login import (
 )
 
 from .endpoints.register import (
-    RegisterResponse,
     RegisterRequest,
+    RegisterResponse,
 )
 
 from .user import (
@@ -104,9 +104,9 @@ __all__ = [
 
     "TokenPayload",
     "LoginRequest",
-    "RegisterResponse",
     "LoginResponse",
-    "RefreshAccessResponse",
+    "RegisterRequest",
+    "RegisterResponse",
 
     "RequestAccess",
     "ResponseAccess",
