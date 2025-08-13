@@ -1,4 +1,4 @@
-from .base_schema import *
+from ..base_schema import *
 from ..user import *
 
 

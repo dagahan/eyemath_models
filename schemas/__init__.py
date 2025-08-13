@@ -111,7 +111,7 @@ __all__ = [
     "RequestAccess",
     "ResponseAccess",
     "RequestRefresh",
-    "ResponseRefresh"
+    "ResponseRefresh",
 
     "UserDTO",
     "UserCreateDTO",
