@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bs_models"
+version = "0.3.0"
+description = "gRPC protobuf files for EyeMath project"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+packages = ["stubs"]
+
+[project.urls]
+"Homepage" = "https://github.com/dagahan/bs_models"
+"Bug Tracker" = "https://github.com/dagahan/bs_models/issues"
