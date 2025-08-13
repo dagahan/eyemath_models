@@ -13,7 +13,7 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(64), nullable=True)
     phone: Mapped[str] = mapped_column(String(16), nullable=False)
     role: Mapped[UserRole] = mapped_column(
-        Enum(*[e.value for e in UserRole], name="user_role_enum"),
+        Enum(UserRole.user, UserRole.admin, UserRole.seller, name="user_role_enum"),
         default=UserRole.user,
         nullable=False
     )
