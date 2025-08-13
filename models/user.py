@@ -17,6 +17,7 @@ class User(Base):
         default=UserRole.user,
         nullable=False
     )
+
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     
