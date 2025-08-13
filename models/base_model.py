@@ -71,7 +71,6 @@ class Base(DeclarativeBase):
 
 
 class UserRole(str, Enum):
-    name='user.role'
     user = "user"
     admin = "admin"
     seller = "seller"
