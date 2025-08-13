@@ -14,7 +14,8 @@ from .author import (
 )
 
 from .jwt import (
-    TokenPayload,
+    AccessPayload,
+    RefreshPayload,
 )
 
 from .tokens.access_token import (
@@ -102,7 +103,9 @@ __all__ = [
     "AuthorCreateDTO", 
     "AuthorUpdateDTO",
 
-    "TokenPayload",
+    "RefreshPayload",
+    "AccessPayload",
+    
     "LoginRequest",
     "LoginResponse",
     "RegisterRequest",
