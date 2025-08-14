@@ -33,6 +33,10 @@ from .endpoints.login import (
     LoginResponse,
 )
 
+from .endpoints.logout import (
+    LogoutResponse,
+)
+
 from .endpoints.register import (
     RegisterRequest,
     RegisterResponse,
@@ -105,9 +109,12 @@ __all__ = [
 
     "RefreshPayload",
     "AccessPayload",
-    
+
     "LoginRequest",
     "LoginResponse",
+
+    "LogoutResponse",
+    
     "RegisterRequest",
     "RegisterResponse",
 
