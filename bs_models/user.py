@@ -5,6 +5,7 @@ class User(Base):
     __tablename__ = "users"
     
     id: Mapped[UUIDpk]
+    user_name: Mapped[str] = mapped_column(String(32), nullable=False) 
     hashed_password: Mapped[str] = mapped_column(Password, nullable=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     first_name: Mapped[str] = mapped_column(String(32), nullable=False)

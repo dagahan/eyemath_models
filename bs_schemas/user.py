@@ -3,6 +3,7 @@ from .base_schema import *
 
 class UserDTO(TimestampMixin):
     id: UUID = Field(...)
+    user_name: str = Field(..., min_length=5, max_length=32)
     hashed_password: SecretStr = Field(..., min_length=8, max_length=32)
     is_active: bool = Field(default=True)
     first_name: str = Field(..., min_length=3, max_length=32)
@@ -18,6 +19,7 @@ class UserDTO(TimestampMixin):
 
 
 class UserCreateDTO(BaseDTO):
+    user_name: str = Field(..., min_length=5, max_length=32)
     password: SecretStr = Field(..., min_length=8, max_length=32)
     first_name: str = Field(..., min_length=3, max_length=32)
     last_name: str = Field(..., min_length=3, max_length=32)
@@ -32,6 +34,7 @@ class UserCreateDTO(BaseDTO):
 
 
 class UserUpdateDTO(BaseDTO):
+    user_name: str = Field(default=None, min_length=5, max_length=32)
     password: SecretStr = Field(default=None, min_length=8, max_length=32)
     is_active: bool = Field(default=None)
     first_name: str = Field(default=None, min_length=3, max_length=32)
