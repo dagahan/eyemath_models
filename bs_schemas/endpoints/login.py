@@ -6,7 +6,7 @@ class LoginRequest(BaseModel):
     phone: Optional[str]
     user_name: Optional[str]
     email: Optional[str]
-    password: str
+    password: SecretStr
 
 
 class LoginResponse(BaseModel):
