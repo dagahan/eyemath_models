@@ -7,6 +7,7 @@ class LoginRequest(BaseModel):
     user_name: Optional[str]
     email: Optional[str]
     password: SecretStr
+    dsh: str
 
 
 class LoginResponse(BaseModel):
