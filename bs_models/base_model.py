@@ -45,6 +45,12 @@ class Password(TypeDecorator):
     def process_result_value(self, value: str, dialect) -> str:
         return value
 
+    
+    @staticmethod
+    def hash_password(password: str) -> str:
+        salt = bcrypt.gensalt()
+        return bcrypt.hashpw(password.encode('utf-8'), salt).decode('utf-8')
+
 
 class Base(DeclarativeBase):
     # this is base class for all of declaratively using models of tables.
