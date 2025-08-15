@@ -47,7 +47,7 @@ class Password(TypeDecorator):
 
 
     @staticmethod
-    def verify(plain_password: str, hashed_password: str) -> bool:
+    def verify_password(plain_password: str, hashed_password: str) -> bool:
         try:
             return bcrypt.checkpw(
                 plain_password.encode('utf-8'),
