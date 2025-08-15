@@ -134,8 +134,8 @@ __all__ = [
     "UnbanRequest",
     "UnbanResponse",
 
-    "banRequest",
-    "banResponse",
+    "BanRequest",
+    "BanResponse",
 
     "LoginRequest",
     "LoginResponse",
