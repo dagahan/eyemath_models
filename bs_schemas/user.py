@@ -4,7 +4,7 @@ from .base_schema import *
 class UserDTO(TimestampMixin):
     id: UUID = Field(...)
     user_name: str = Field(..., min_length=5, max_length=32)
-    hashed_password: SecretStr = Field(..., min_length=8, max_length=32)
+    hashed_password: SecretStr = Field(...)
     is_active: bool = Field(default=True)
     first_name: str = Field(..., min_length=3, max_length=32)
     last_name: str = Field(..., min_length=3, max_length=32)

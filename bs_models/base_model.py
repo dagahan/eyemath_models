@@ -32,7 +32,7 @@ money = Annotated[Numeric, mapped_column(Numeric(10, 2), nullable=False)]
 
 
 class Password(TypeDecorator):
-    impl = String(60) # length of the bcrypt hash
+    impl = String(256) # length of the bcrypt hash
     cache_ok = True
 
 
@@ -44,12 +44,6 @@ class Password(TypeDecorator):
 
     def process_result_value(self, value: str, dialect) -> str:
         return value
-
-
-    @staticmethod
-    def hash_password(password: str) -> str:
-        salt = bcrypt.gensalt()
-        return bcrypt.hashpw(password.encode('utf-8'), salt).decode('utf-8')
 
 
     @staticmethod
