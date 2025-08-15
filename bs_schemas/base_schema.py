@@ -9,8 +9,9 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, SecretStr
 
 class UserRole(str, Enum):
     user = "user"
+    moderator = "moderator"
     admin = "admin"
-    seller = "seller"
+    god = "god"
 
 
 class PaymentMethodDTO(str, Enum):

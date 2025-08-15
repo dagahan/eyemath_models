@@ -12,6 +12,7 @@ class UserDTO(TimestampMixin):
     email: Optional[str] = Field(default=None, max_length=64)
     phone: str = Field(..., min_length=11, max_length=16)
     role: UserRole = Field(...)
+    is_seller: bool = Field(default=False)
 
     @field_validator('first_name', 'last_name', 'middle_name', mode='before')
     def capitalize_name(cls, v: str) -> str:
@@ -28,6 +29,7 @@ class UserCreateDTO(BaseDTO):
     email: Optional[str] = Field(default=None, max_length=64)
     phone: str = Field(..., min_length=11, max_length=16)
     role: UserRole = Field(default=UserRole.user)
+    is_seller: bool = Field(default=False)
 
     @field_validator('first_name', 'last_name', 'middle_name', mode='before')
     def capitalize_name(cls, v: str) -> str:
@@ -41,9 +43,10 @@ class UserUpdateDTO(BaseDTO):
     first_name: str = Field(default=None, min_length=3, max_length=32)
     last_name: str = Field(default=None, min_length=3, max_length=32)
     middle_name: str = Field(default=None, min_length=3, max_length=32)
-    email: Optional[str] = Field(default=None, max_length=64)
+    email: str = Field(default=None, max_length=64)
     phone: str = Field(default=None, min_length=11, max_length=16)
     role: UserRole = Field(default=None)
+    is_seller: bool = Field(default=False)
 
     @field_validator('first_name', 'last_name', 'middle_name', mode='before')
     def capitalize_name(cls, v: str) -> str:

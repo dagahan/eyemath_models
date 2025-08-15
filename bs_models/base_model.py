@@ -60,8 +60,9 @@ class Base(DeclarativeBase):
 
 class UserRole(str, Enum):
     user = "user"
+    moderator = "moderator"
     admin = "admin"
-    seller = "seller"
+    god = "god"
 
 
 class PaymentMethodEnum(str, enum.Enum):

@@ -7,7 +7,7 @@ class User(Base):
     id: Mapped[UUIDpk]
     user_name: Mapped[str] = mapped_column(String(32), nullable=False) 
     hashed_password: Mapped[str] = mapped_column(Password, nullable=False)
-    is_active: Mapped[bool] = mapped_column(Boolean, default=True)
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     first_name: Mapped[str] = mapped_column(String(32), nullable=False)
     last_name: Mapped[str] = mapped_column(String(32), nullable=False)
     middle_name: Mapped[str] = mapped_column(String(32), nullable=False)
@@ -16,8 +16,9 @@ class User(Base):
     role: Mapped[UserRole] = mapped_column(
         Enum(UserRole.user, UserRole.admin, UserRole.seller, name="role"),
         default=UserRole.user,
-        nullable=False
+        nullable=False,
     )
+    is_seller: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
 
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
