@@ -1,4 +1,4 @@
-from .base_schema import *
+from ..base_schema import *
 
 
 class Session(BaseModel):  # Session:{hashed_session_uuid} {expire_time}
