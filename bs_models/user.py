@@ -27,7 +27,12 @@ class User(Base):
     purchases_as_seller: Mapped[list["Purchase"]] = relationship("Purchase", foreign_keys="[Purchase.seller_id]", back_populates='seller')
     seller: Mapped["Seller"] = relationship("Seller", back_populates='user', uselist=False)
 
-
     def verify_password(self, plain_password: str) -> bool:
-        return Password.verify(plain_password, self.hashed_password)
-    
+        try:
+            return bcrypt.checkpw(
+                plain_password.encode('utf-8'),
+                self.hashed_password.encode('utf-8')
+            )
+        except Exception as e:
+            logger.error(f"Password verification error: {e}")
+            return False
