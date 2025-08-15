@@ -28,6 +28,14 @@ from .tokens.refresh_token import (
     ResponseRefresh,
 )
 
+from .valkey.session import (
+    Session,
+)
+
+from .valkey.invalid_refresh import (
+    InvalidRefresh,
+)
+
 from .endpoints.login import (
     LoginRequest,
     LoginResponse,
@@ -110,11 +118,14 @@ __all__ = [
     "RefreshPayload",
     "AccessPayload",
 
+    "InvalidRefresh",
+    "Session",
+
     "LoginRequest",
     "LoginResponse",
 
     "LogoutResponse",
-    
+
     "RegisterRequest",
     "RegisterResponse",
 

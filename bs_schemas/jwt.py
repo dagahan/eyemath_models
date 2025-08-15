@@ -11,4 +11,5 @@ class RefreshPayload(BaseModel):
     sub: str
     sid: str
     exp: int
-    ref: bool # refresh token 
+    dsh: str  # device info hash (user_agent + client_id + local_system_time_zone + platform)
+    ish: str  # hashed ip (for soft identity)
