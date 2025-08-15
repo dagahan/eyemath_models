@@ -21,6 +21,7 @@ class UserDTO(TimestampMixin):
 class UserCreateDTO(BaseDTO):
     user_name: str = Field(..., min_length=5, max_length=32)
     password: SecretStr = Field(..., min_length=8, max_length=32)
+    dsh: str = Field(...)
     first_name: str = Field(..., min_length=3, max_length=32)
     last_name: str = Field(..., min_length=3, max_length=32)
     middle_name: str = Field(..., min_length=3, max_length=32)
