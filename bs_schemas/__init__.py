@@ -50,6 +50,16 @@ from .endpoints.register import (
     RegisterResponse,
 )
 
+from .endpoints.ban import (
+    BanRequest,
+    BanResponse,
+)
+
+from .endpoints.unban import (
+    UnbanRequest,
+    UnbanResponse,
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -120,6 +130,12 @@ __all__ = [
 
     "InvalidRefresh",
     "Session",
+
+    "UnbanRequest",
+    "UnbanResponse",
+
+    "banRequest",
+    "banResponse",
 
     "LoginRequest",
     "LoginResponse",
