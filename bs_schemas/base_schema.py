@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, Optional
+from typing import List, Optional, Annotated
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, SecretStr
