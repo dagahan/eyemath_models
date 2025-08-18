@@ -11,7 +11,7 @@ class ProductType(Base):
     cost: Mapped[money]
     sale: Mapped[float] = mapped_column(Float, nullable=True)
     author_id: Mapped[UUID] = mapped_column(ForeignKey('authors.id'), nullable=False)
-    date_publication: Mapped[TIMESTAMP] = mapped_column(TIMESTAMP, nullable=False)
+    date_publication: Mapped[BIGINT] = mapped_column(BIGINT, nullable=False)
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     

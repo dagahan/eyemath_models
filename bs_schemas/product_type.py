@@ -7,7 +7,7 @@ class ProductTypeDTO(TimestampMixin):
     available: bool = Field(default=True)
     cost: float = Field(..., ge=0)
     sale: Optional[float] = Field(default=None, ge=0, le=1)
-    date_publication: datetime = Field(...)
+    date_publication: UnixTs = Field(...)
     seller_id: UUID = Field(...)
     author_id: UUID = Field(...)
     
@@ -21,7 +21,7 @@ class ProductTypeCreateDTO(BaseDTO):
     available: bool = Field(default=True)
     cost: float = Field(..., ge=0)
     sale: Optional[float] = Field(default=None, ge=0, le=1)
-    date_publication: datetime = Field(...)
+    date_publication: UnixTs = Field(...)
     seller_id: UUID = Field(...)
     author_id: UUID = Field(...)
     
@@ -35,7 +35,7 @@ class ProductTypeUpdateDTO(BaseDTO):
     available: Optional[bool] = Field(default=None)
     cost: Optional[float] = Field(default=None, ge=0)
     sale: Optional[float] = Field(default=None, ge=0, le=1)
-    date_publication: Optional[datetime] = Field(default=None)
+    date_publication: Optional[UnixTs] = Field(default=None)
     seller_id: Optional[UUID] = Field(default=None)
     author_id: Optional[UUID] = Field(default=None)
     

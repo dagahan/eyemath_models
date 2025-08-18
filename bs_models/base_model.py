@@ -4,7 +4,8 @@ import bcrypt
 from loguru import logger
 
 from sqlalchemy import (
-    TIMESTAMP,
+    TIMESTAMP, # Unix time, seconds since 1970-01-01T00:00:00Z, may be negative before 1970
+    BIGINT,
     Boolean,
     Enum,
     Float,
@@ -15,6 +16,8 @@ from sqlalchemy import (
     func,
     TypeDecorator,
 )
+
+import datetime
 
 from sqlalchemy.dialects.postgresql import UUID, BIGINT
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship

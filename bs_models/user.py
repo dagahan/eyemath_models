@@ -19,7 +19,6 @@ class User(Base):
         nullable=False,
     )
     is_seller: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
-
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     

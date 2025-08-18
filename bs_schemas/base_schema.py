@@ -1,10 +1,12 @@
-from datetime import datetime
 from enum import Enum
 from typing import List, Optional
 from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, SecretStr
 
+
+UnixTs = Annotated[int, Field(...,
+description="Unix time, seconds since 1970-01-01T00:00:00Z, may be negative before 1970")]
 
 
 class UserRole(str, Enum):
@@ -38,5 +40,5 @@ class BaseDTO(BaseModel):
 
 
 class TimestampMixin(BaseDTO):
-    created_at: datetime = Field(...)
-    updated_at: datetime = Field(...)
+    created_at: UnixTs
+    updated_at: UnixTs
