@@ -1,5 +1,3 @@
-import datetime
-import enum
 from typing import Annotated
 from uuid import uuid4
 import bcrypt
@@ -17,17 +15,26 @@ from sqlalchemy import (
     func,
     TypeDecorator,
 )
-from sqlalchemy.dialects.postgresql import UUID
+
+from sqlalchemy.dialects.postgresql import UUID, BIGINT
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
+
 UUIDpk = Annotated[UUID, mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid4)]
-created_at = Annotated[datetime.datetime, mapped_column(server_default=func.now(), nullable=False)]
-updated_at = Annotated[datetime.datetime, mapped_column
-                       (
-                            server_default=func.now(),
-                            onupdate=func.now(),
-                            nullable=False
-                        )]
+
+created_at = Annotated[int, mapped_column(
+    BIGINT,
+    text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
+    nullable=False)
+]
+
+updated_at = Annotated[int, mapped_column(
+    BIGINT,
+    server_default=text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
+    onupdate=text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
+    nullable=False)
+]
+
 money = Annotated[Numeric, mapped_column(Numeric(10, 2), nullable=False)]
 
 
@@ -65,19 +72,19 @@ class UserRole(str, Enum):
     god = "god"
 
 
-class PaymentMethodEnum(str, enum.Enum):
+class PaymentMethodEnum(str, Enum):
     cash = 'cash'
     card = 'card'
 
 
-class DeliveryStatusEnum(str, enum.Enum):
+class DeliveryStatusEnum(str, Enum):
     on_delivery = 'on_delivery'
     wait_for_delivery = 'wait_for_delivery'
     done = 'done'
     failed = 'failed'
 
 
-class DeliveryGroupStatusEnum(str, enum.Enum):
+class DeliveryGroupStatusEnum(str, Enum):
     on_delivery = 'on_delivery'
     wait_for_delivery = 'wait_for_delivery'
     done = 'done'
