@@ -14,7 +14,7 @@ class User(Base):
     email: Mapped[str] = mapped_column(String(64), nullable=True)
     phone: Mapped[str] = mapped_column(String(16), nullable=False)
     role: Mapped[UserRole] = mapped_column(
-        Enum(UserRole.user, UserRole.moderator, UserRole.admin, UserRole.god, name="role"),
+        SQLEnum(UserRole.user, UserRole.moderator, UserRole.admin, UserRole.god, name="role"),
         default=UserRole.user,
         nullable=False,
     )

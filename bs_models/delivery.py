@@ -6,7 +6,7 @@ class Delivery(Base):
     
     id: Mapped[UUIDpk]
     product_id: Mapped[UUID] = mapped_column(ForeignKey('products.id'), nullable=False)
-    status: Mapped[DeliveryStatusEnum] = mapped_column(Enum(DeliveryStatusEnum), nullable=False)
+    status: Mapped[DeliveryStatusEnum] = mapped_column(SQLEnum(DeliveryStatusEnum), nullable=False)
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     

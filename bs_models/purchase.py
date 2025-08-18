@@ -6,7 +6,7 @@ class Purchase(Base):
     
     id: Mapped[UUIDpk]
     timestamp: Mapped[TIMESTAMP] = mapped_column(TIMESTAMP, nullable=False)
-    payment_method: Mapped[PaymentMethodEnum] = mapped_column(Enum(PaymentMethodEnum), nullable=False)
+    payment_method: Mapped[PaymentMethodEnum] = mapped_column(SQLEnum(PaymentMethodEnum), nullable=False)
     delivery_group_id: Mapped[UUID] = mapped_column(ForeignKey('delivery_groups.id'), nullable=False)
     buyer_id: Mapped[UUID] = mapped_column(ForeignKey('users.id'), nullable=False)
     seller_id: Mapped[UUID] = mapped_column(ForeignKey('users.id'), nullable=False)

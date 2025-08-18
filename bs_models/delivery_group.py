@@ -7,7 +7,7 @@ class DeliveryGroup(Base):
     id: Mapped[UUIDpk]
     target_warehouse_id: Mapped[UUID] = mapped_column(ForeignKey('warehouses.id'), nullable=False)
     target_user_id: Mapped[UUID] = mapped_column(ForeignKey('users.id'), nullable=False)
-    status: Mapped[DeliveryGroupStatusEnum] = mapped_column(Enum(DeliveryGroupStatusEnum), nullable=False)
+    status: Mapped[DeliveryGroupStatusEnum] = mapped_column(SQLEnum(DeliveryGroupStatusEnum), nullable=False)
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     

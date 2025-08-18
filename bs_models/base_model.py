@@ -7,7 +7,7 @@ from sqlalchemy import (
     TIMESTAMP, # Unix time, seconds since 1970-01-01T00:00:00Z, may be negative before 1970
     BigInteger,
     Boolean,
-    Enum,
+    Enum as SQLEnum,
     Float,
     ForeignKey,
     Integer,
@@ -69,26 +69,26 @@ class Base(DeclarativeBase):
     pass
 
 
-class UserRole(str, Enum):
+class UserRole(str, SQLEnum):
     user = "user"
     moderator = "moderator"
     admin = "admin"
     god = "god"
 
 
-class PaymentMethodEnum(str, Enum):
+class PaymentMethodEnum(str, SQLEnum):
     cash = 'cash'
     card = 'card'
 
 
-class DeliveryStatusEnum(str, Enum):
+class DeliveryStatusEnum(str, SQLEnum):
     on_delivery = 'on_delivery'
     wait_for_delivery = 'wait_for_delivery'
     done = 'done'
     failed = 'failed'
 
 
-class DeliveryGroupStatusEnum(str, Enum):
+class DeliveryGroupStatusEnum(str, SQLEnum):
     on_delivery = 'on_delivery'
     wait_for_delivery = 'wait_for_delivery'
     done = 'done'
