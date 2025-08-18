@@ -1,5 +1,6 @@
 from .base_model import *
-from .media import Image, Video
+from .media.image import Image
+from .media.video import Video
 from __future__ import annotations
 
 

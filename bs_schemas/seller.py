@@ -1,6 +1,4 @@
-from __future__ import annotations
 from .base_model import *
-from .media import Image
 
 
 class SellerDTO(TimestampMixin):
@@ -19,4 +17,4 @@ class SellerCreateDTO(BaseDTO):
 class SellerUpdateDTO(BaseDTO):
     name: Optional[str] = Field(default=None, min_length=1, max_length=128)
     avatar_image_id: Optional[UUID] = Field(default=None)
-    
+

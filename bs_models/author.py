@@ -1,6 +1,6 @@
 from __future__ import annotations
 from .base_model import *
-from .media import Image
+from .media.image import Image
 
 
 class Author(Base):

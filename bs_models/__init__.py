@@ -20,14 +20,18 @@ from .purchase import Purchase
 from .purchase_item import PurchaseItem
 from .seller import Seller
 from .user import User
-from .warehourse import Warehouse
+from .warehouse import Warehouse
+
+from .media.gif import Gif
+from .media.image import Image
+from .media.video import Video
 
 
 __all__ = [
     # Base classes and types
     "Base",
     "UUIDpk",
-    "created_at", 
+    "created_at",
     "updated_at",
     "money",
     "PaymentMethodEnum",
@@ -35,11 +39,11 @@ __all__ = [
     "DeliveryGroupStatusEnum",
     "UserRole",
     "Password",
-    
-    # Model classes
+
+    # Domain models
     "Author",
     "Delivery",
-    "DeliveryGroup", 
+    "DeliveryGroup",
     "Product",
     "ProductType",
     "Purchase",
@@ -47,4 +51,9 @@ __all__ = [
     "Seller",
     "User",
     "Warehouse",
+
+    # Media models
+    "Image",
+    "Video",
+    "Gif",
 ]

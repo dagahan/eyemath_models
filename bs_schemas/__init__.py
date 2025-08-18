@@ -114,15 +114,34 @@ from .purchase_item import (
     PurchaseItemUpdateDTO
 )
 
+from .media.gif import (
+    GifDTO,
+    GifCreateDTO,
+    GifUpdateDTO
+)
+
+from .media.video import (
+    VideoDTO,
+    VideoCreateDTO,
+    VideoUpdateDTO
+)
+
+from .media.image import (
+    ImageDTO,
+    ImageCreateDTO,
+    ImageUpdateDTO
+)
+
 __all__ = [
     "BaseDTO",
-    "TimestampMixin", 
+    "TimestampMixin",
     "PaymentMethodDTO",
     "DeliveryStatusDTO",
     "DeliveryGroupStatusDTO",
-    
+    "UserRole",
+
     "AuthorDTO",
-    "AuthorCreateDTO", 
+    "AuthorCreateDTO",
     "AuthorUpdateDTO",
 
     "RefreshPayload",
@@ -153,36 +172,48 @@ __all__ = [
     "UserDTO",
     "UserCreateDTO",
     "UserUpdateDTO",
-    
+
     "SellerDTO",
     "SellerCreateDTO",
     "SellerUpdateDTO",
-    
+
     "WarehouseDTO",
     "WarehouseCreateDTO",
     "WarehouseUpdateDTO",
-    
+
     "ProductTypeDTO",
     "ProductTypeCreateDTO",
     "ProductTypeUpdateDTO",
-    
+
     "ProductDTO",
     "ProductCreateDTO",
     "ProductUpdateDTO",
-    
+
     "DeliveryDTO",
     "DeliveryCreateDTO",
     "DeliveryUpdateDTO",
-    
+
     "DeliveryGroupDTO",
     "DeliveryGroupCreateDTO",
     "DeliveryGroupUpdateDTO",
-    
+
     "PurchaseDTO",
     "PurchaseCreateDTO",
     "PurchaseUpdateDTO",
-    
+
     "PurchaseItemDTO",
     "PurchaseItemCreateDTO",
     "PurchaseItemUpdateDTO",
+
+    "ImageDTO",
+    "ImageCreateDTO",
+    "ImageUpdateDTO",
+
+    "VideoDTO",
+    "VideoCreateDTO",
+    "VideoUpdateDTO",
+
+    "GifDTO",
+    "GifCreateDTO",
+    "GifUpdateDTO",
 ]
