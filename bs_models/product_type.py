@@ -1,4 +1,25 @@
 from .base_model import *
+from .media import Image, Video
+from __future__ import annotations
+
+
+product_type_images = Table(
+    "product_type_images",
+    Base.metadata,
+    Column("product_type_id", UUID(as_uuid=True), ForeignKey("product_types.id", ondelete="CASCADE"), primary_key=True),
+    Column("image_id", UUID(as_uuid=True), ForeignKey("images.id", ondelete="CASCADE"), primary_key=True),
+    Column("position", Integer, nullable=False, default=0),
+    UniqueConstraint("product_type_id", "image_id", name="uq_product_type_image_once"),
+)
+
+product_type_videos = Table(
+    "product_type_videos",
+    Base.metadata,
+    Column("product_type_id", UUID(as_uuid=True), ForeignKey("product_types.id", ondelete="CASCADE"), primary_key=True),
+    Column("video_id", UUID(as_uuid=True), ForeignKey("videos.id", ondelete="CASCADE"), primary_key=True),
+    Column("position", Integer, nullable=False, default=0),
+    UniqueConstraint("product_type_id", "video_id", name="uq_product_type_video_once"),
+)
 
 
 class ProductType(Base):
@@ -19,4 +40,10 @@ class ProductType(Base):
     author: Mapped["Author"] = relationship("Author", back_populates='product_types')
     products: Mapped[list["Product"]] = relationship("Product", back_populates='product_type')
     purchase_items: Mapped[list["PurchaseItem"]] = relationship("PurchaseItem", back_populates='product_type')
+    images: Mapped[list[Image]] = relationship(
+        "Image", secondary="product_type_images", back_populates="product_types", order_by="product_type_images.c.position"
+    )
+    videos: Mapped[list[Video]] = relationship(
+        "Video", secondary="product_type_videos", back_populates="product_types", order_by="product_type_videos.c.position"
+    )
 

@@ -10,6 +10,8 @@ class ProductTypeDTO(TimestampMixin):
     date_publication: UnixTs = Field(...)
     seller_id: UUID = Field(...)
     author_id: UUID = Field(...)
+    image_ids: List[UUID] = Field(default_factory=list)
+    video_ids: List[UUID] = Field(default_factory=list)
     
     @field_validator('cost', mode='before')
     def convert_decimal(cls, v):
@@ -24,6 +26,8 @@ class ProductTypeCreateDTO(BaseDTO):
     date_publication: UnixTs = Field(...)
     seller_id: UUID = Field(...)
     author_id: UUID = Field(...)
+    image_ids: List[UUID] = Field(default_factory=list)
+    video_ids: List[UUID] = Field(default_factory=list)
     
     @field_validator('cost', mode='before')
     def convert_decimal(cls, v):
@@ -38,6 +42,8 @@ class ProductTypeUpdateDTO(BaseDTO):
     date_publication: Optional[UnixTs] = Field(default=None)
     seller_id: Optional[UUID] = Field(default=None)
     author_id: Optional[UUID] = Field(default=None)
+    image_ids: Optional[List[UUID]] = Field(default=None)
+    video_ids: Optional[List[UUID]] = Field(default=None)
     
     @field_validator('cost', mode='before')
     def convert_decimal(cls, v):

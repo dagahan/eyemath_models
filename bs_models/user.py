@@ -1,4 +1,6 @@
+from __future__ import annotations
 from .base_model import *
+from .media import Image
 
 
 class User(Base):
@@ -19,6 +21,9 @@ class User(Base):
         nullable=False,
     )
     is_seller: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    profile_image_id: Mapped[UUID | None] = mapped_column(
+        ForeignKey("images.id", ondelete="SET NULL"), nullable=True
+    )
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     
@@ -26,6 +31,7 @@ class User(Base):
     purchases_as_buyer: Mapped[list["Purchase"]] = relationship("Purchase", foreign_keys="[Purchase.buyer_id]", back_populates='buyer')
     purchases_as_seller: Mapped[list["Purchase"]] = relationship("Purchase", foreign_keys="[Purchase.seller_id]", back_populates='seller')
     seller: Mapped["Seller"] = relationship("Seller", back_populates='user', uselist=False)
+    profile_image: Mapped[Image | None] = relationship("Image")
 
     def verify_password(self, plain_password: str) -> bool:
         try:

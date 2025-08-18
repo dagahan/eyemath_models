@@ -24,8 +24,19 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
-UUIDpk = Annotated[UUID, mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid4)]
+UUIDpk = Annotated[UUID,
+        mapped_column(UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid4
+    )]
 
+UUIDMediapk = Annotated[UUID, mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("media.id", ondelete="CASCADE"),
+        primary_key=True,
+        default=uuid4
+    )]
+    
 created_at = Annotated[int, mapped_column(
     BigInteger,
     server_default=text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
