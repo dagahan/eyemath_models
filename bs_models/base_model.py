@@ -15,6 +15,7 @@ from sqlalchemy import (
     String,
     func,
     TypeDecorator,
+    text,
 )
 
 import datetime
