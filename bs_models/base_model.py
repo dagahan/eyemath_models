@@ -5,7 +5,7 @@ from loguru import logger
 
 from sqlalchemy import (
     TIMESTAMP, # Unix time, seconds since 1970-01-01T00:00:00Z, may be negative before 1970
-    BIGINT,
+    BigInteger,
     Boolean,
     Enum,
     Float,
@@ -20,20 +20,20 @@ from sqlalchemy import (
 
 import datetime
 
-from sqlalchemy.dialects.postgresql import UUID, BIGINT
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 
 UUIDpk = Annotated[UUID, mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid4)]
 
 created_at = Annotated[int, mapped_column(
-    BIGINT,
-    text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
+    BigInteger,
+    server_default=text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
     nullable=False)
 ]
 
 updated_at = Annotated[int, mapped_column(
-    BIGINT,
+    BigInteger,
     server_default=text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
     onupdate=text("(EXTRACT(EPOCH FROM NOW()))::bigint"),
     nullable=False)

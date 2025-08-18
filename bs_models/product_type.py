@@ -11,7 +11,7 @@ class ProductType(Base):
     cost: Mapped[money]
     sale: Mapped[float] = mapped_column(Float, nullable=True)
     author_id: Mapped[UUID] = mapped_column(ForeignKey('authors.id'), nullable=False)
-    date_publication: Mapped[BIGINT] = mapped_column(BIGINT, nullable=False)
+    date_publication: Mapped[BigInteger] = mapped_column(BigInteger, nullable=False)
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
     
@@ -19,3 +19,4 @@ class ProductType(Base):
     author: Mapped["Author"] = relationship("Author", back_populates='product_types')
     products: Mapped[list["Product"]] = relationship("Product", back_populates='product_type')
     purchase_items: Mapped[list["PurchaseItem"]] = relationship("PurchaseItem", back_populates='product_type')
+
