@@ -7,7 +7,7 @@ from sqlalchemy import (
     TIMESTAMP, # Unix time, seconds since 1970-01-01T00:00:00Z, may be negative before 1970
     BigInteger,
     Boolean,
-    Enum as SQLEnum,
+    Enum as PyEnum,
     Float,
     ForeignKey,
     Integer,
@@ -18,7 +18,7 @@ from sqlalchemy import (
     text,
 )
 
-import datetime
+from enum import Enum as PyEnum
 
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
@@ -69,26 +69,26 @@ class Base(DeclarativeBase):
     pass
 
 
-class UserRole(str, SQLEnum):
+class UserRole(str, PyEnum):
     user = "user"
     moderator = "moderator"
     admin = "admin"
     god = "god"
 
 
-class PaymentMethodEnum(str, SQLEnum):
+class PaymentMethodEnum(str, PyEnum):
     cash = 'cash'
     card = 'card'
 
 
-class DeliveryStatusEnum(str, SQLEnum):
+class DeliveryStatusEnum(str, PyEnum):
     on_delivery = 'on_delivery'
     wait_for_delivery = 'wait_for_delivery'
     done = 'done'
     failed = 'failed'
 
 
-class DeliveryGroupStatusEnum(str, SQLEnum):
+class DeliveryGroupStatusEnum(str, PyEnum):
     on_delivery = 'on_delivery'
     wait_for_delivery = 'wait_for_delivery'
     done = 'done'
