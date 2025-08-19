@@ -1,4 +1,5 @@
 from .base_model import *
+from .media.image import Image
 
 
 class Seller(Base):
