@@ -5,6 +5,7 @@ from .base_schema import (
     DeliveryStatusDTO,
     DeliveryGroupStatusDTO,
     UserRole,
+    ProductTypeCategory,
 )
 
 from .author import (
@@ -145,6 +146,7 @@ __all__ = [
     "DeliveryStatusDTO",
     "DeliveryGroupStatusDTO",
     "UserRole",
+    "ProductTypeCategory",
 
     "AuthorDTO",
     "AuthorCreateDTO",

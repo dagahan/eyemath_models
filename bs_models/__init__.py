@@ -9,6 +9,7 @@ from .base_model import (
     DeliveryGroupStatusEnum,
     UserRole,
     Password,
+    ProductTypeCategory,
 )
 
 from .author import Author
@@ -39,6 +40,7 @@ __all__ = [
     "DeliveryGroupStatusEnum",
     "UserRole",
     "Password",
+    "ProductTypeCategory",
 
     # Domain models
     "Author",
