@@ -60,6 +60,10 @@ from .endpoints.unban import (
     UnbanResponse,
 )
 
+from .endpoints.upload_avatar import (
+    UploadAvatarResponse,
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -170,6 +174,8 @@ __all__ = [
     "ResponseAccess",
     "RequestRefresh",
     "ResponseRefresh",
+
+    "UploadAvatarResponse",
 
     "UserDTO",
     "UserCreateDTO",
