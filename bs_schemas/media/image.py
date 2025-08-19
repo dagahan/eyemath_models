@@ -32,4 +32,20 @@ class ImageUpdateDTO(BaseDTO):
     exif_stripped: Optional[bool] = Field(default=None)
     colorspace: Optional[str] = Field(default=None, max_length=16)
 
+
+class ImageProcessMeta(BaseModel):
+    mime: str = Field(..., max_length=64)
+    size: int = Field(..., ge=0)
+    width: int = Field(..., ge=1)
+    height: int = Field(..., ge=1)
+    exif_stripped: bool = Field(default=True)
+    colorspace: Optional[str] = Field(default=None, max_length=16)
+    format: str = Field(..., max_length=16)
+    checksum_sha256: str = Field(..., min_length=64, max_length=64)
+
+
+class ImageProcessResult(BaseModel):
+    data: bytes
+    meta: ImageProcessMeta
+
     

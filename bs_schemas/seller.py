@@ -11,7 +11,6 @@ class SellerDTO(TimestampMixin):
 class SellerCreateDTO(BaseDTO):
     name: str = Field(..., min_length=1, max_length=128)
     user_id: UUID = Field(...)
-    avatar_image_id: Optional[UUID] = Field(default=None)
 
 
 class SellerUpdateDTO(BaseDTO):

@@ -31,7 +31,6 @@ class UserCreateDTO(BaseDTO):
     phone: str = Field(..., min_length=11, max_length=16)
     role: UserRole = Field(default=UserRole.user)
     is_seller: bool = Field(default=False)
-    profile_image_id: Optional[UUID] = Field(default=None)
 
     @field_validator('first_name', 'last_name', 'middle_name', mode='before')
     def capitalize_name(cls, v: str) -> str:

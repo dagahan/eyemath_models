@@ -26,8 +26,6 @@ class ProductTypeCreateDTO(BaseDTO):
     date_publication: UnixTs = Field(...)
     seller_id: UUID = Field(...)
     author_id: UUID = Field(...)
-    image_ids: List[UUID] = Field(default_factory=list)
-    video_ids: List[UUID] = Field(default_factory=list)
     
     @field_validator('cost', mode='before')
     def convert_decimal(cls, v):

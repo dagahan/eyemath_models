@@ -9,7 +9,6 @@ class AuthorDTO(TimestampMixin):
 
 class AuthorCreateDTO(BaseDTO):
     name: str = Field(..., min_length=1, max_length=128)
-    avatar_image_id: Optional[UUID] = Field(default=None)
 
 
 class AuthorUpdateDTO(BaseDTO):
