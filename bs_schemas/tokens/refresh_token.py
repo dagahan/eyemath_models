@@ -7,4 +7,5 @@ class RequestRefresh(BaseModel):
 
 class ResponseRefresh(BaseModel):
     access_token: str
+    refresh_token: str
 
