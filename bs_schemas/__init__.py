@@ -65,6 +65,11 @@ from .endpoints.upload_avatar import (
     UploadAvatarResponse,
 )
 
+from .endpoints.categories import (
+    CategoriesRequest,
+    CategoriesResponse,
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -178,6 +183,9 @@ __all__ = [
     "ResponseRefresh",
 
     "UploadAvatarResponse",
+
+    "CategoriesRequest",
+    "CategoriesResponse",
 
     "UserDTO",
     "UserCreateDTO",
