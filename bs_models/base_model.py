@@ -18,6 +18,7 @@ from sqlalchemy import (
     text,
     Table,
     Column,
+    UniqueConstraint,
 )
 
 from enum import Enum as PyEnum
