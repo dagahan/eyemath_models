@@ -63,73 +63,75 @@ from .endpoints.unban import (
 from .user import (
     UserDTO,
     UserCreateDTO,
-    UserUpdateDTO
+    UserUpdateDTO,
 )
 
 from .seller import (
     SellerDTO,
     SellerCreateDTO,
-    SellerUpdateDTO
+    SellerUpdateDTO,
 )
 
 from .warehouse import (
     WarehouseDTO,
     WarehouseCreateDTO,
-    WarehouseUpdateDTO
+    WarehouseUpdateDTO,
 )
 
 from .product_type import (
     ProductTypeDTO,
     ProductTypeCreateDTO,
-    ProductTypeUpdateDTO
+    ProductTypeUpdateDTO,
 )
 
 from .product import (
     ProductDTO,
     ProductCreateDTO,
-    ProductUpdateDTO
+    ProductUpdateDTO,
 )
 
 from .delivery import (
     DeliveryDTO,
     DeliveryCreateDTO,
-    DeliveryUpdateDTO
+    DeliveryUpdateDTO,
 )
 
 from .delivery_group import (
     DeliveryGroupDTO,
     DeliveryGroupCreateDTO,
-    DeliveryGroupUpdateDTO
+    DeliveryGroupUpdateDTO,
 )
 
 from .purchase import (
     PurchaseDTO,
     PurchaseCreateDTO,
-    PurchaseUpdateDTO
+    PurchaseUpdateDTO,
 )
 
 from .purchase_item import (
     PurchaseItemDTO,
     PurchaseItemCreateDTO,
-    PurchaseItemUpdateDTO
+    PurchaseItemUpdateDTO,
 )
 
 from .media.gif import (
     GifDTO,
     GifCreateDTO,
-    GifUpdateDTO
+    GifUpdateDTO,
 )
 
 from .media.video import (
     VideoDTO,
     VideoCreateDTO,
-    VideoUpdateDTO
+    VideoUpdateDTO,
 )
 
 from .media.image import (
     ImageDTO,
     ImageCreateDTO,
-    ImageUpdateDTO
+    ImageUpdateDTO,
+    ImageProcessMeta,
+    ImageProcessResult,
 )
 
 __all__ = [
@@ -208,6 +210,8 @@ __all__ = [
     "ImageDTO",
     "ImageCreateDTO",
     "ImageUpdateDTO",
+    "ImageProcessMeta",
+    "ImageProcessResult",
 
     "VideoDTO",
     "VideoCreateDTO",
