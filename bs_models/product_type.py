@@ -1,7 +1,7 @@
+from __future__ import annotations
 from .base_model import *
 from .media.image import Image
 from .media.video import Video
-from __future__ import annotations
 
 
 product_type_images = Table(
