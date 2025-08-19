@@ -1,4 +1,5 @@
 from ..base_model import *
+from .media import Media
 
 
 class Video(Media):
