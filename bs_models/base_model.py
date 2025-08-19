@@ -16,6 +16,7 @@ from sqlalchemy import (
     func,
     TypeDecorator,
     text,
+    Table,
 )
 
 from enum import Enum as PyEnum
