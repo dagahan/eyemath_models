@@ -1,4 +1,4 @@
-from .base_model import *
+from .base_schema import *
 
 
 class SellerDTO(TimestampMixin):
