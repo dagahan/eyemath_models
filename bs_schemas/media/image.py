@@ -1,4 +1,5 @@
 from ..base_schema import *
+from .media import MediaDTO
 
 
 class ImageDTO(MediaDTO):
