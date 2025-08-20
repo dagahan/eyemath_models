@@ -7,5 +7,5 @@ class CategoriesRequest(BaseModel):
 
 
 class CategoriesResponse(BaseModel):
-    product_tupes: List[ProductTypeDTO]
+    product_types: List[ProductTypeDTO]
 
