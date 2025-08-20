@@ -70,6 +70,11 @@ from .endpoints.categories import (
     CategoriesResponse,
 )
 
+from .endpoints.product_types_by_categories import (
+    ProductTypesByCategoriesRequest,
+    ProductTypesByCategoriesResponse,
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -186,6 +191,9 @@ __all__ = [
 
     "CategoriesRequest",
     "CategoriesResponse",
+
+    "ProductTypesByCategoriesRequest",
+    "ProductTypesByCategoriesResponse",
 
     "UserDTO",
     "UserCreateDTO",
