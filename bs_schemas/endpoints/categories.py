@@ -1,11 +1,10 @@
 from ..base_schema import *
-from ..product_type import ProductTypeDTO
 
 
 class CategoriesRequest(BaseModel):
-    categories: Optional[List[ProductTypeCategory]] = None
+    pass
 
 
 class CategoriesResponse(BaseModel):
-    product_types: List[ProductTypeDTO]
+    categories: List[ProductTypeCategory]
 
