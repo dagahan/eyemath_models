@@ -37,7 +37,6 @@ class ProductType(Base):
     category: Mapped[ProductTypeCategory] = mapped_column(
         SQLEnum(ProductTypeCategory, name="category"),
         nullable=False,
-        native_enum=False,
     )
     created_at: Mapped[created_at]
     updated_at: Mapped[updated_at]
