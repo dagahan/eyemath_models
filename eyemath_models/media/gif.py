@@ -1,6 +1,6 @@
 from __future__ import annotations
-from bs_models.base_model import * 
-from bs_models.media.media import Media 
+from .base_model import * 
+from .media.media import Media 
 
 
 class Gif(Media):

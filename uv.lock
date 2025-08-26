@@ -3,6 +3,6 @@ revision = 2
 requires-python = ">=3.7"
 
 [[package]]
-name = "bs_models"
+name = "eyemath_models"
 version = "0.3.0"
 source = { editable = "." }
