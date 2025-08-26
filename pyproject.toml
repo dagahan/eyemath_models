@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "bs_models"
+name = "eyemath_models"
 version = "0.3.0"
-description = "gRPC protobuf files for EyeMath project"
+description = "Sqlalchemy declarative models and pydantic shemas for EyeMath project"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -18,8 +18,8 @@ classifiers = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["bs_schemas*", "bs_models*"]
+include = ["eyemath_schemas*", "eyemath_models*"]
 
 [project.urls]
-"Homepage" = "https://github.com/dagahan/bs_models"
-"Bug Tracker" = "https://github.com/dagahan/bs_models/issues"
+"Homepage" = "https://github.com/dagahan/eyemath_models"
+"Bug Tracker" = "https://github.com/dagahan/eyemath_models/issues"
