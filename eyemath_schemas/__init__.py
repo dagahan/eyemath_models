@@ -65,6 +65,11 @@ from .endpoints.recognize_latex import (
     RecognizeImageResponse,
 )
 
+from .endpoints.render_latex import (
+    RenderLatexRequest,
+    RenderLatexResponse,
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -99,6 +104,7 @@ _endpoints = [
     "LoginRequest","LoginResponse","LogoutResponse","RegisterRequest","RegisterResponse",
     "BanRequest","BanResponse","UnbanRequest","UnbanResponse","UploadAvatarResponse",
     "NormalizeLatexRequest","NormalizeLatexResponse","RecognizeImageResponse",
+    "RenderLatexRequest","RenderLatexResponse",
 ]
 _user = ["UserDTO","UserCreateDTO","UserUpdateDTO"]
 _media = ["GifDTO","GifCreateDTO","GifUpdateDTO","VideoDTO","VideoCreateDTO","VideoUpdateDTO",
