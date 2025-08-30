@@ -56,6 +56,15 @@ from .endpoints.upload_avatar import (
     UploadAvatarResponse,
 )
 
+from .endpoints.normalize_latex import (
+    NormalizeLatexRequest,
+    NormalizeLatexResponse,
+)
+
+from .endpoints.recognize_latex import (
+    RecognizeImageResponse,
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -82,52 +91,19 @@ from .media.image import (
     ImageProcessResult,
 )
 
-__all__ = [
-    # base
-    "BaseDTO",
-    "TimestampMixin",
-    "PaymentMethodDTO",
-    "UserRole",
 
-    # jwt / tokens
-    "AccessPayload",
-    "RefreshPayload",
-    "RequestAccess",
-    "ResponseAccess",
-    "RequestRefresh",
-    "ResponseRefresh",
-
-    # valkey
-    "Session",
-    "InvalidRefresh",
-
-    # endpoints
-    "LoginRequest",
-    "LoginResponse",
-    "LogoutResponse",
-    "RegisterRequest",
-    "RegisterResponse",
-    "BanRequest",
-    "BanResponse",
-    "UnbanRequest",
-    "UnbanResponse",
-    "UploadAvatarResponse",
-
-    # user
-    "UserDTO",
-    "UserCreateDTO",
-    "UserUpdateDTO",
-
-    # media
-    "GifDTO",
-    "GifCreateDTO",
-    "GifUpdateDTO",
-    "VideoDTO",
-    "VideoCreateDTO",
-    "VideoUpdateDTO",
-    "ImageDTO",
-    "ImageCreateDTO",
-    "ImageUpdateDTO",
-    "ImageProcessMeta",
-    "ImageProcessResult",
+_base = ["BaseDTO", "TimestampMixin", "PaymentMethodDTO", "UserRole"]
+_tokens = ["AccessPayload","RefreshPayload","RequestAccess","ResponseAccess","RequestRefresh","ResponseRefresh"]
+_valkey = ["Session","InvalidRefresh"]
+_endpoints = [
+    "LoginRequest","LoginResponse","LogoutResponse","RegisterRequest","RegisterResponse",
+    "BanRequest","BanResponse","UnbanRequest","UnbanResponse","UploadAvatarResponse",
+    "NormalizeLatexRequest","NormalizeLatexResponse","RecognizeImageResponse",
 ]
+_user = ["UserDTO","UserCreateDTO","UserUpdateDTO"]
+_media = ["GifDTO","GifCreateDTO","GifUpdateDTO","VideoDTO","VideoCreateDTO","VideoUpdateDTO",
+          "ImageDTO","ImageCreateDTO","ImageUpdateDTO","ImageProcessMeta","ImageProcessResult"]
+
+__all__ = [*_base, *_tokens, *_valkey, *_endpoints, *_user, *_media]
+
+
