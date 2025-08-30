@@ -8,12 +8,6 @@ from .base_schema import (
     ProductTypeCategory,
 )
 
-from .author import (
-    AuthorDTO,
-    AuthorCreateDTO,
-    AuthorUpdateDTO
-)
-
 from .jwt import (
     AccessPayload,
     RefreshPayload,
@@ -65,68 +59,10 @@ from .endpoints.upload_avatar import (
     UploadAvatarResponse,
 )
 
-from .endpoints.categories import (
-    CategoriesRequest,
-    CategoriesResponse,
-)
-
-from .endpoints.product_types_by_categories import (
-    ProductTypesByCategoriesRequest,
-    ProductTypesByCategoriesResponse,
-)
-
 from .user import (
     UserDTO,
     UserCreateDTO,
     UserUpdateDTO,
-)
-
-from .seller import (
-    SellerDTO,
-    SellerCreateDTO,
-    SellerUpdateDTO,
-)
-
-from .warehouse import (
-    WarehouseDTO,
-    WarehouseCreateDTO,
-    WarehouseUpdateDTO,
-)
-
-from .product_type import (
-    ProductTypeDTO,
-    ProductTypeCreateDTO,
-    ProductTypeUpdateDTO,
-)
-
-from .product import (
-    ProductDTO,
-    ProductCreateDTO,
-    ProductUpdateDTO,
-)
-
-from .delivery import (
-    DeliveryDTO,
-    DeliveryCreateDTO,
-    DeliveryUpdateDTO,
-)
-
-from .delivery_group import (
-    DeliveryGroupDTO,
-    DeliveryGroupCreateDTO,
-    DeliveryGroupUpdateDTO,
-)
-
-from .purchase import (
-    PurchaseDTO,
-    PurchaseCreateDTO,
-    PurchaseUpdateDTO,
-)
-
-from .purchase_item import (
-    PurchaseItemDTO,
-    PurchaseItemCreateDTO,
-    PurchaseItemUpdateDTO,
 )
 
 from .media.gif import (
@@ -150,6 +86,7 @@ from .media.image import (
 )
 
 __all__ = [
+    # base
     "BaseDTO",
     "TimestampMixin",
     "PaymentMethodDTO",
@@ -158,90 +95,45 @@ __all__ = [
     "UserRole",
     "ProductTypeCategory",
 
-    "AuthorDTO",
-    "AuthorCreateDTO",
-    "AuthorUpdateDTO",
-
-    "RefreshPayload",
+    # jwt / tokens
     "AccessPayload",
-
-    "InvalidRefresh",
-    "Session",
-
-    "UnbanRequest",
-    "UnbanResponse",
-
-    "BanRequest",
-    "BanResponse",
-
-    "LoginRequest",
-    "LoginResponse",
-
-    "LogoutResponse",
-
-    "RegisterRequest",
-    "RegisterResponse",
-
+    "RefreshPayload",
     "RequestAccess",
     "ResponseAccess",
     "RequestRefresh",
     "ResponseRefresh",
 
+    # valkey
+    "Session",
+    "InvalidRefresh",
+
+    # endpoints
+    "LoginRequest",
+    "LoginResponse",
+    "LogoutResponse",
+    "RegisterRequest",
+    "RegisterResponse",
+    "BanRequest",
+    "BanResponse",
+    "UnbanRequest",
+    "UnbanResponse",
     "UploadAvatarResponse",
 
-    "CategoriesRequest",
-    "CategoriesResponse",
-
-    "ProductTypesByCategoriesRequest",
-    "ProductTypesByCategoriesResponse",
-
+    # user
     "UserDTO",
     "UserCreateDTO",
     "UserUpdateDTO",
 
-    "SellerDTO",
-    "SellerCreateDTO",
-    "SellerUpdateDTO",
-
-    "WarehouseDTO",
-    "WarehouseCreateDTO",
-    "WarehouseUpdateDTO",
-
-    "ProductTypeDTO",
-    "ProductTypeCreateDTO",
-    "ProductTypeUpdateDTO",
-
-    "ProductDTO",
-    "ProductCreateDTO",
-    "ProductUpdateDTO",
-
-    "DeliveryDTO",
-    "DeliveryCreateDTO",
-    "DeliveryUpdateDTO",
-
-    "DeliveryGroupDTO",
-    "DeliveryGroupCreateDTO",
-    "DeliveryGroupUpdateDTO",
-
-    "PurchaseDTO",
-    "PurchaseCreateDTO",
-    "PurchaseUpdateDTO",
-
-    "PurchaseItemDTO",
-    "PurchaseItemCreateDTO",
-    "PurchaseItemUpdateDTO",
-
+    # media
+    "GifDTO",
+    "GifCreateDTO",
+    "GifUpdateDTO",
+    "VideoDTO",
+    "VideoCreateDTO",
+    "VideoUpdateDTO",
     "ImageDTO",
     "ImageCreateDTO",
     "ImageUpdateDTO",
     "ImageProcessMeta",
     "ImageProcessResult",
-
-    "VideoDTO",
-    "VideoCreateDTO",
-    "VideoUpdateDTO",
-
-    "GifDTO",
-    "GifCreateDTO",
-    "GifUpdateDTO",
 ]
