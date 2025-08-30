@@ -68,6 +68,8 @@ from .endpoints.recognize_latex import (
 from .endpoints.render_latex import (
     RenderLatexRequest,
     RenderLatexResponse,
+    RenderLatexBatchRequest,
+    RenderLatexBatchResponse,
 )
 
 from .endpoints.solve_latex import (
@@ -119,6 +121,7 @@ _endpoints = [
     "NormalizeLatexRequest", "NormalizeLatexResponse",
     "RecognizeImageResponse",
     "RenderLatexRequest", "RenderLatexResponse",
+    "RenderLatexBatchRequest", "RenderLatexBatchResponse",
     "SolveRequest", "SolveResponse",
 ]
 _user = ["UserDTO", "UserCreateDTO", "UserUpdateDTO"]

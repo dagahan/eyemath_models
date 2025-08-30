@@ -7,6 +7,14 @@ class RenderLatexRequest(BaseModel):
 
 
 class RenderLatexResponse(BaseModel):
-    render_image: str
+    image_url: str
 
+
+class RenderLatexBatchRequest(BaseModel):
+    latex_expressions: List[str] = Field(min_length=1) 
+    dpi: int | None = Field(default=None, ge=72, le=1200)
+
+
+class RenderLatexBatchResponse(BaseModel):
+    images_urls: List[str] = Field(min_length=1)
 

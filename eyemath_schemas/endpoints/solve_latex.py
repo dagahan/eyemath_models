@@ -9,7 +9,7 @@ class SolveRequest(BaseModel):
 
 class SolveResponse(BaseModel):
     results: List[str] = []
-    renders: List[str] = []
+    renders_urls: List[str] = []
     solving_steps: List[str] = []
 
 
