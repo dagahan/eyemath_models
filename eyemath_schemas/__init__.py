@@ -70,6 +70,11 @@ from .endpoints.render_latex import (
     RenderLatexResponse,
 )
 
+from .endpoints.solve_latex import (
+    SolveRequest,
+    SolveResponse,
+)
+
 from .user import (
     UserDTO,
     UserCreateDTO,
@@ -98,18 +103,30 @@ from .media.image import (
 
 
 _base = ["BaseDTO", "TimestampMixin", "PaymentMethodDTO", "UserRole"]
-_tokens = ["AccessPayload","RefreshPayload","RequestAccess","ResponseAccess","RequestRefresh","ResponseRefresh"]
-_valkey = ["Session","InvalidRefresh"]
-_endpoints = [
-    "LoginRequest","LoginResponse","LogoutResponse","RegisterRequest","RegisterResponse",
-    "BanRequest","BanResponse","UnbanRequest","UnbanResponse","UploadAvatarResponse",
-    "NormalizeLatexRequest","NormalizeLatexResponse","RecognizeImageResponse",
-    "RenderLatexRequest","RenderLatexResponse",
+_tokens = [
+    "AccessPayload", "RefreshPayload",
+    "RequestAccess", "ResponseAccess",
+    "RequestRefresh", "ResponseRefresh",
 ]
-_user = ["UserDTO","UserCreateDTO","UserUpdateDTO"]
-_media = ["GifDTO","GifCreateDTO","GifUpdateDTO","VideoDTO","VideoCreateDTO","VideoUpdateDTO",
-          "ImageDTO","ImageCreateDTO","ImageUpdateDTO","ImageProcessMeta","ImageProcessResult"]
+_valkey = ["Session", "InvalidRefresh"]
+_endpoints = [
+    "LoginRequest", "LoginResponse",
+    "LogoutResponse",
+    "RegisterRequest", "RegisterResponse",
+    "BanRequest", "BanResponse",
+    "UnbanRequest", "UnbanResponse",
+    "UploadAvatarResponse",
+    "NormalizeLatexRequest", "NormalizeLatexResponse",
+    "RecognizeImageResponse",
+    "RenderLatexRequest", "RenderLatexResponse",
+    "SolveRequest", "SolveResponse",
+]
+_user = ["UserDTO", "UserCreateDTO", "UserUpdateDTO"]
+_media = [
+    "GifDTO", "GifCreateDTO", "GifUpdateDTO",
+    "VideoDTO", "VideoCreateDTO", "VideoUpdateDTO",
+    "ImageDTO", "ImageCreateDTO", "ImageUpdateDTO",
+    "ImageProcessMeta", "ImageProcessResult",
+]
 
 __all__ = [*_base, *_tokens, *_valkey, *_endpoints, *_user, *_media]
-
-
