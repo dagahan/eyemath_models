@@ -2,8 +2,8 @@ from ..base_schema import *
 from ..user import *
 
 
-# class RegisterRequest:
-#     data: UserCreateDTO
+class RegisterRequest:
+    data: UserCreateDTO
 
 
 class RegisterResponse(BaseModel):
