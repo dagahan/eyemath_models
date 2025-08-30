@@ -2,8 +2,6 @@ from .base_schema import (
     BaseDTO,
     TimestampMixin,
     PaymentMethodDTO,
-    DeliveryStatusDTO,
-    DeliveryGroupStatusDTO,
     UserRole,
     ProductTypeCategory,
 )
@@ -90,8 +88,6 @@ __all__ = [
     "BaseDTO",
     "TimestampMixin",
     "PaymentMethodDTO",
-    "DeliveryStatusDTO",
-    "DeliveryGroupStatusDTO",
     "UserRole",
     "ProductTypeCategory",
 
