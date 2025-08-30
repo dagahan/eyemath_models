@@ -12,10 +12,6 @@ class Image(Media):
     exif_stripped: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
     colorspace: Mapped[str | None] = mapped_column(String(16), nullable=True)
 
-    product_types: Mapped[list["ProductType"]] = relationship(
-        "ProductType", secondary="product_type_images", back_populates="images"
-    )
-
     __mapper_args__ = {"polymorphic_identity": "image"}
 
     

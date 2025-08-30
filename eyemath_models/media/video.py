@@ -15,10 +15,6 @@ class Video(Media):
     codec_video: Mapped[str | None] = mapped_column(String(32), nullable=True)
     codec_audio: Mapped[str | None] = mapped_column(String(32), nullable=True)
 
-    product_types: Mapped[list["ProductType"]] = relationship(
-        "ProductType", secondary="product_type_videos", back_populates="videos"
-    )
-
     __mapper_args__ = {"polymorphic_identity": "video"}
 
     
