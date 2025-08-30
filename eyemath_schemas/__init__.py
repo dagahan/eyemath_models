@@ -3,7 +3,6 @@ from .base_schema import (
     TimestampMixin,
     PaymentMethodDTO,
     UserRole,
-    ProductTypeCategory,
 )
 
 from .jwt import (
@@ -89,7 +88,6 @@ __all__ = [
     "TimestampMixin",
     "PaymentMethodDTO",
     "UserRole",
-    "ProductTypeCategory",
 
     # jwt / tokens
     "AccessPayload",
