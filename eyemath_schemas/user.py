@@ -27,12 +27,30 @@ class UserCreateDTO(BaseDTO):
     last_name: str = Field(..., min_length=3, max_length=32)
     middle_name: str = Field(..., min_length=3, max_length=32)
     email: Optional[str] = Field(default=None, max_length=64)
-    phone: str = Field(..., min_length=11, max_length=16)
+    phone: Optional[str] = Field(default=None)
     role: UserRole = Field(default=UserRole.user)
+
 
     @field_validator('first_name', 'last_name', 'middle_name', mode='before')
     def capitalize_name(cls, v: str) -> str:
         return v.strip().capitalize()
+    
+
+    @field_validator('phone', 'email', mode='before')
+    @classmethod
+    def validate_optional_fields(cls, v):
+        # Convert empty strings to None
+        if v == "" or v is None:
+            return None
+        return v
+
+
+    @field_validator('phone', mode='after')
+    @classmethod
+    def validate_phone_length(cls, v):
+        if v is not None and (len(v) < 11 or len(v) > 16):
+            raise ValueError('Phone number must be between 11 and 16 characters')
+        return v
 
 
 class UserUpdateDTO(BaseDTO):
@@ -50,4 +68,7 @@ class UserUpdateDTO(BaseDTO):
     @field_validator('first_name', 'last_name', 'middle_name', mode='before')
     def capitalize_name(cls, v: str) -> str:
         return v.strip().capitalize()
+    
+
+
     
